@@ -1,11 +1,9 @@
 package com.guestbook;
 
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GuestbookServiceTest {
 
@@ -17,18 +15,27 @@ public class GuestbookServiceTest {
         service = new GuestbookService();
     }
 
-
     @Test
     public void fetchEntriesReturnsNullWhenEmpty() {
 
-        assertNull(service.fetchEntries());
+        assertTrue(service.fetchEntries().isEmpty());
     }
 
     @Test
     public void fetchEntriesReturnsSingleComment() {
-        service.entry = "This is a comment.";
 
-        assertEquals("This is a comment.", service.fetchEntries());
+        service.entry.add("This is a comment.");
+
+        assertEquals("This is a comment.", service.fetchEntries().get(0));
+    }
+
+    @Test
+    public void fetchEntriesReturnsAllComments() {
+        service.entry.add("This is a comment.");
+        service.entry.add("This is a second comment.");
+
+        assertEquals("This is a comment.", service.fetchEntries().get(0));
+        assertEquals("This is a second comment.", service.fetchEntries().get(1));
     }
 
 }

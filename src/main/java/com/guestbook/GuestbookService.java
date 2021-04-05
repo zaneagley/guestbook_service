@@ -2,14 +2,16 @@ package com.guestbook;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class GuestbookService {
 
-    String entry;
+    List<String> entry = new ArrayList<>();
 
 
-    public String fetchEntries() {
-
+    public List<String> fetchEntries() {
 
         return entry;
     }
