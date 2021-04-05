@@ -5,8 +5,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class GuestbookService {
 
+    String entry;
 
-    public Object fetchEntries() {
-        return null;
+
+    public String fetchEntries() {
+
+
+        return entry;
     }
 }
