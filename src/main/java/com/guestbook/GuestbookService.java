@@ -15,4 +15,9 @@ public class GuestbookService {
 
         return entry;
     }
+
+    public void saveVisitorComment(VisitorDTO visitorDTO) {
+        entry.add(visitorDTO.comment);
+
+    }
 }

@@ -38,4 +38,13 @@ public class GuestbookServiceTest {
         assertEquals("This is a second comment.", service.fetchEntries().get(1));
     }
 
+    @Test
+    public void saveVisitorComment() {
+        VisitorDTO visitorDTO = new VisitorDTO();
+        visitorDTO.comment = "This is a visitor comment";
+        service.saveVisitorComment(visitorDTO);
+
+        assertEquals("This is a visitor comment", service.fetchEntries().get(0));
+    }
+
 }
