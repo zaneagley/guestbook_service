@@ -9,11 +9,12 @@ import java.util.List;
 
 @RestController
 public class GuestbookController {
+
     @Autowired
     public GuestbookService guestbookService;
 
     @GetMapping("comments")
-    public List<String> fetchComments(){
+    public List<VisitorDTO> fetchComments(){
         return guestbookService.fetchEntries();
     }
 

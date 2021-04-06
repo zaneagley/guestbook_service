@@ -8,16 +8,16 @@ import java.util.List;
 @Service
 public class GuestbookService {
 
-    List<String> entry = new ArrayList<>();
+    List<VisitorDTO> entry = new ArrayList<>();
 
 
-    public List<String> fetchEntries() {
+    public List<VisitorDTO> fetchEntries() {
 
         return entry;
     }
 
     public void saveVisitorComment(VisitorDTO visitorDTO) {
-        entry.add(visitorDTO.comment);
+        entry.add(visitorDTO);
 
     }
 }
