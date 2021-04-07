@@ -1,0 +1,15 @@
+GuestBook
+
+.request
+include::{snippets}/Comments/http-request.adoc[]
+
+.response
+include::{snippets}/Comments/http-response.adoc[]
+
+PostComment
+
+.request
+include::{snippets}/PostComment/http-request.adoc[]
+
+.response
+include::{snippets}/PostComment/http-response.adoc[]
