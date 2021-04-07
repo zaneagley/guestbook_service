@@ -24,7 +24,4 @@ public class GuestbookController {
         guestbookService.saveVisitorComment(visitorDTO);
     }
 
-
-
-
 }
