@@ -46,3 +46,14 @@ You should see the results below:
  Schema |      Name      | Type  |  Owner   
 --------:|----------------:|-------:|----------
  public | visitor_entity | table | postgres
+
+To run the guestbook service within Heroku
+```
+1. Create a new application in Heroku
+2. Back on the Heroku web dashboard for your app, go to the "Deploy" tab. Select the Container Registry deployment option and follow instructions.
+      heroku login
+      heroku git:remote -a
+      heroku container:login
+      heroku container:push web
+      heroku container:release web
+```
